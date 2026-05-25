@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide Deck Human Evaluation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #eef2f7;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.page-container {
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 40px rgba(0,0,0,0.08);
+  min-height: 100vh;
+}
+.page-header {
+  background: linear-gradient(135deg, #0f2554 0%, #1d4ed8 60%, #2563eb 100%);
+  color: white;
+  text-align: center;
+  padding: 48px 40px 40px;
+}
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.page-header .tagline {
+  font-size: 1.05rem;
+  font-weight: 400;
+  opacity: 0.88;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.content { padding: 0 48px 80px; }
+
+/* Evaluator name */
+.evaluator-section {
+  margin: 40px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.evaluator-section label {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.evaluator-section input {
+  padding: 10px 16px;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 300px;
+  transition: border-color 0.2s;
+}
+.evaluator-section input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+
+/* Instructions */
+.instructions {
+  background: #f0f6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid #2563eb;
+  border-radius: 0 12px 12px 0;
+  padding: 28px 36px;
+  margin: 24px 0 36px;
+}
+.instructions h3 {
+  margin: 0 0 16px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #64748b;
+  font-weight: 700;
+}
+.instructions ol {
+  margin: 0;
+  padding-left: 20px;
+}
+.instructions li {
+  margin-bottom: 8px;
+  color: #334155;
+}
+.instructions li strong { color: #1e40af; }
+
+/* Topic Selection */
+.topic-section { margin: 36px 0; }
+.topic-section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 20px;
+}
+.topic-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.topic-btn {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px 24px;
+  border: 2px solid #bfdbfe;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+.topic-btn:hover {
+  border-color: #60a5fa;
+  background: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37,99,235,0.15);
+}
+.topic-btn.active {
+  border-color: #2563eb;
+  background: #dbeafe;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+}
+.topic-btn .topic-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 4px;
+}
+.topic-btn .topic-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Paper Section */
+.papers-container { margin-top: 40px; }
+.paper-block {
+  margin-bottom: 56px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+.paper-header {
+  background: #f8fafc;
+  padding: 20px 28px;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.paper-num {
+  background: #1d4ed8;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.paper-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+.slides-row {
+  display: flex;
+  gap: 0;
+}
+.slide-col {
+  flex: 1;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+.slide-col:last-child { border-right: none; }
+.slide-label {
+  text-align: center;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+}
+.slide-label.label-a { color: #dc2626; }
+.slide-label.label-b { color: #2563eb; }
+.slide-label.label-c { color: #059669; }
+.slide-label.label-d { color: #7c3aed; }
+.slide-label.label-e { color: #ea580c; }
+.slide-col iframe {
+  width: 100%;
+  height: 80vh;
+  border: none;
+}
+
+/* Expand button */
+.expand-btn {
+  display: block;
+  margin: 8px auto;
+  padding: 8px 22px;
+  background: #dc2626;
+  border: 1.5px solid #b91c1c;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 2px 6px rgba(220,38,38,0.25);
+}
+.expand-btn:hover {
+  background: #b91c1c;
+  border-color: #991b1b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(220,38,38,0.35);
+}
+
+/* Fullscreen modal for expanded slide */
+.slide-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+.slide-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 1100px;
+}
+.slide-modal-tabs {
+  display: flex;
+  gap: 4px;
+}
+.slide-modal-tab {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  transition: all 0.15s;
+}
+.slide-modal-tab.active { background: white; color: #1e293b; }
+.slide-modal-tab.tab-a.active { color: #dc2626; }
+.slide-modal-tab.tab-b.active { color: #2563eb; }
+.slide-modal-tab.tab-c.active { color: #059669; }
+.slide-modal-tab.tab-d.active { color: #7c3aed; }
+.slide-modal-tab.tab-e.active { color: #ea580c; }
+.slide-modal-close {
+  margin-left: auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.slide-modal-close:hover { background: rgba(255,255,255,0.3); }
+.slide-modal iframe {
+  width: 100%;
+  max-width: 1100px;
+  flex: 1;
+  border: none;
+  border-radius: 0 8px 8px 8px;
+  background: white;
+}
+
+/* Ranking */
+.ranking-area {
+  padding: 20px 28px;
+  background: #fafbfc;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  overflow: visible;
+}
+.criterion-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.criterion-row:last-child { border-bottom: none; }
+.criterion-name {
+  font-weight: 700;
+  color: #1e40af;
+  font-size: 0.95rem;
+  min-width: 200px;
+}
+.ranking-area label {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+}
+.rank-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rank-group .rank-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 20px;
+}
+.rank-label-a { color: #dc2626; }
+.rank-label-b { color: #2563eb; }
+.rank-label-c { color: #059669; }
+.rank-label-d { color: #7c3aed; }
+.rank-label-e { color: #ea580c; }
+.rank-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.rank-trigger {
+  padding: 6px 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+  min-width: 90px;
+  text-align: center;
+  font-weight: 600;
+  color: #94a3b8;
+  user-select: none;
+  transition: all 0.15s;
+}
+.rank-trigger.selected {
+  color: #0f172a;
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+.rank-dropdown.open .rank-trigger,
+.rank-dropdown:hover .rank-trigger {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.rank-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: white;
+  border: 1.5px solid #2563eb;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  display: none;
+  z-index: 60;
+  overflow: hidden;
+}
+.rank-dropdown.open .rank-options { display: block; }
+.rank-option {
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  text-align: center;
+  transition: background 0.1s;
+}
+.rank-option:hover { background: #dbeafe; color: #1e40af; }
+.rank-group select {
+  padding: 6px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+}
+.rank-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+.rank-status {
+  margin-left: auto;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.rank-status.complete { color: #059669; }
+.rank-status.incomplete { color: #94a3b8; }
+
+.paper-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  padding: 3px 10px;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 5px;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.paper-link:hover {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
+
+/* Submit */
+.submit-area {
+  margin-top: 48px;
+  text-align: center;
+}
+.submit-btn {
+  padding: 14px 48px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background: #1d4ed8;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.submit-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+.submit-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.hidden { display: none; }
+
+/* Success/error toast */
+.toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  padding: 16px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  z-index: 200;
+  animation: slideIn 0.3s ease;
+}
+.toast.success { background: #059669; color: white; }
+.toast.error { background: #dc2626; color: white; }
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Submitted overlay */
+.submitted-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.submitted-box {
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  max-width: 480px;
+}
+.submitted-box h2 {
+  margin: 0 0 12px;
+  color: #059669;
+  font-size: 1.5rem;
+}
+.submitted-box p {
+  color: #475569;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="page-container">
+
+<div class="page-header">
+  <h1>Slide Deck Human Evaluation &#x1F60A;</h1>
+  <p class="tagline">This study compares the quality of slide decks automatically generated from research papers,<br>focusing on <strong>content and narrative flow</strong>(not Visual Design).</p>
+</div>
+
+<div class="content">
+
+  <div class="evaluator-section">
+    <label for="evaluator-name">Nickname:</label>
+    <input type="text" id="evaluator-name" placeholder="e.g. slide_fan_99" oninput="checkAllComplete()">
+  </div>
+
+  <div class="instructions">
+    <h3>Evaluation Criteria</h3>
+    <p style="margin:0 0 12px;color:#475569;font-size:0.9rem;">For each paper, rank the three slide decks (A, B, C, D, E) on <strong>each</strong> of the three criteria below.</p>
+    <p style="margin:16px 0 6px;font-weight:700;color:#1e40af;">Narrative Flow</p>
+    <ol style="margin-top:0;">
+      <li><strong>Logical Progression</strong> &mdash; Does it follow a coherent structure (problem &rarr; method &rarr; evidence) without front-loading technical details?</li>
+      <li><strong>Global Coherence</strong> &mdash; Do all slides support one unified narrative of explaining a paper?</li>
+    </ol>
+    <p style="margin:16px 0 6px;font-weight:700;color:#1e40af;">Content</p>
+    <ol start="3" style="margin-top:0;">
+      <li><strong>Technical Depth</strong> &mdash; Does it include concrete technical substance (method details, experimental validation), rather than a few bullet-point summaries?</li>
+    </ol>
+  </div>
+
+  <div class="instructions" style="border-left-color:#059669;background:#f0fdf4;border-color:#bbf7d0;">
+    <h3>Evaluation Procedure</h3>
+    <ol>
+      <li>Review the <strong>5 research documents</strong> listed below.</li>
+      <li>For each document, review five anonymized slide decks (<strong>A, B, C, D, E</strong>) generated by different systems.</li>
+      <li>Click the red <strong>Expand</strong> button below each slide deck to view it in full size for a clearer evaluation.</li>
+      <li>Rank them from <strong>1 (Best)</strong> to <strong>5 (Worst)</strong> based on the criteria above.</li>
+      <li> If needed click the <strong>link</strong> near paper title to open the reference paper the slide is based on.</li>
+    </ol>
+    <p style="margin:12px 0 0;color:#475569;font-size:0.9rem;">
+      Systems are anonymized, and A/B/C/D/E order may vary across documents.<br>
+      Estimated completion time: <strong>15&ndash;20 minutes</strong> &#x1F642;
+    </p>
+  </div>
+
+  <div class="topic-section">
+    <h2>Arcbench Results</h2>
+  </div>
+
+  <div id="papers-container" class="papers-container"></div>
+
+  <div id="submit-area" class="submit-area hidden">
+    <button class="submit-btn" id="submit-btn" onclick="submitResults()" disabled>Submit Rankings</button>
+    <p style="font-size:0.85rem;color:#94a3b8;margin-top:12px;">Enter your name and complete all rankings to enable submission.<br>Your thoughtful evaluation is greatly appreciated!</p>
+  </div>
+
+</div>
+</div>
+
+<script>
+// ============================================================
+// IMPORTANT: Replace this with your deployed Google Apps Script URL
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby1WjD_MCPh3qgwMgwlyK5A2tKc20t1XiU8mD5vp4N-vidxCyIc_Z9epgIWqlJeFaguKw/exec';
+// ============================================================
+
+const TOPIC = 'Arcbench_results';
+
+const PAPERS = [
+  "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_ICLR_2025",
+  "Can_MLLMs_Reason_in_Multimodality_ICML_2025",
+  "Candidate_Pseudolabel_Learning_-_Enhancing_Vision-Language_Models_by_ICML_2024",
+  "Video-of-Thought_-_Step-by-Step_Video_Reasoning_from_Perception_to_Cognition_ICML_2024",
+  "OPEN_-VOCABULARY_OBJECT_DETECTION_VIA_ICLR_2025"
+];
+
+// Each paper's slide files still live under their original subtopic folder on disk.
+const PAPER_FOLDER = {
+  "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_ICLR_2025": "Generative_models",
+  "Can_MLLMs_Reason_in_Multimodality_ICML_2025": "Vision_language_multimodel",
+  "Candidate_Pseudolabel_Learning_-_Enhancing_Vision-Language_Models_by_ICML_2024": "Vision_language_multimodel",
+  "Video-of-Thought_-_Step-by-Step_Video_Reasoning_from_Perception_to_Cognition_ICML_2024": "Vision_language_multimodel",
+  "OPEN_-VOCABULARY_OBJECT_DETECTION_VIA_ICLR_2025": "Computer_vision_core"
+};
+
+const rankings = {};
+
+const CRITERIA = [
+  { key: 'logical_progression', name: 'Logical Progression' },
+  { key: 'global_coherence',    name: 'Global Coherence' },
+  { key: 'technical_depth',     name: 'Technical Depth' }
+];
+
+const paperLinks = {
+  "Adversarial_Robustification_via_Text-to-Image_Diffusion_Models_ECCV_2024": "https://arxiv.org/abs/2407.18658",
+  "Candidate_Pseudolabel_Learning_-_Enhancing_Vision-Language_Models_by_ICML_2024": "https://arxiv.org/abs/2406.10502",
+  "Pose-Aware_Self-Supervised_Learning_with_Viewpoint_Trajectory_Regularization_ECCV_2024": "https://arxiv.org/abs/2403.14973",
+  "Diffusion_Prior-Based_Amortized_Variational_Inference_for_Noisy_Inverse_Problems_ECCV_2024": "https://arxiv.org/abs/2407.16125",
+  "Can_MLLMs_Reason_in_Multimodality_ICML_2025": "https://arxiv.org/abs/2501.05444",
+  "Mask2Map__Vectorized_HD_Map_Construction_Using_Birds_Eye_View_Segmentation_Masks_ECCV_2024": "https://arxiv.org/abs/2407.13517",
+  "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_ICLR_2025": "https://arxiv.org/abs/2406.10808",
+  "Parrot_Captions_Teach_CLIP_to_Spot_Text_ECCV_2024": "https://arxiv.org/abs/2312.14232",
+  "NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025": "https://openreview.net/forum?id=5UKrnKuspb",
+  "TOWARD_GUIDANCE_-F_REE_AR_V_ISUAL_GENERATION_ICLR_2025": "https://arxiv.org/abs/2410.09347",
+  "MMBENCH__Is_Your_Multi-Modal_Model_an_All-around_Player__ECCV_2024": "https://arxiv.org/abs/2307.06281",
+  "OPEN_-VOCABULARY_OBJECT_DETECTION_VIA_ICLR_2025": "https://arxiv.org/abs/2104.13921",
+  "Refining_Generative_Process_with_Discriminator_Guidance_ICML_2023": "https://arxiv.org/abs/2211.17091",
+  "Video-of-Thought_-_Step-by-Step_Video_Reasoning_from_Perception_to_Cognition_ICML_2024": "https://arxiv.org/abs/2501.03230",
+  "Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025": "https://arxiv.org/abs/2406.02548"
+};
+
+function prettifyName(name) {
+  return name
+    .replace(/_/g, ' ')
+    .replace(/\s+(ECCV|ICML|ICLR|NeurIPS|CVPR)\s+\d{4}$/, ' ($&)')
+    .replace(/\(\s+/, '(')
+    .trim();
+}
+
+function renderPapers() {
+  const container = document.getElementById('papers-container');
+  const papers = PAPERS;
+  let html = '';
+
+  papers.forEach((paper, i) => {
+    const basePath = `slide_list/${PAPER_FOLDER[paper]}/${paper}`;
+    rankings[paper] = {};
+    CRITERIA.forEach(c => { rankings[paper][c.key] = { A: '', B: '', C: '', D: '', E: '' }; });
+
+    const rankDropdown = (cKey, label) => `
+          <div class="rank-dropdown">
+            <div class="rank-trigger">--</div>
+            <div class="rank-options">
+              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','')">--</div>
+              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','1')">1 (Best)</div>
+              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','2')">2</div>
+              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','3')">3</div>
+              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','4')">4</div>
+              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','5')">5 (Worst)</div>
+            </div>
+          </div>`;
+    const criteriaRows = CRITERIA.map(c => `
+        <div class="criterion-row">
+          <span class="criterion-name">${c.name}</span>
+          <div class="rank-group">
+            <span class="rank-label rank-label-a">A</span>
+            ${rankDropdown(c.key, 'A')}
+          </div>
+          <div class="rank-group">
+            <span class="rank-label rank-label-b">B</span>
+            ${rankDropdown(c.key, 'B')}
+          </div>
+          <div class="rank-group">
+            <span class="rank-label rank-label-c">C</span>
+            ${rankDropdown(c.key, 'C')}
+          </div>
+          <div class="rank-group">
+            <span class="rank-label rank-label-d">D</span>
+            ${rankDropdown(c.key, 'D')}
+          </div>
+          <div class="rank-group">
+            <span class="rank-label rank-label-e">E</span>
+            ${rankDropdown(c.key, 'E')}
+          </div>
+          <span class="rank-status incomplete" id="status-${i}-${c.key}">Incomplete</span>
+        </div>`).join('');
+
+    html += `
+    <div class="paper-block" id="paper-${i}">
+      <div class="paper-header">
+        <span class="paper-num">Paper ${i + 1}</span>
+        <h3>${prettifyName(paper)}</h3>
+        ${paperLinks[paper] ? `<a class="paper-link" href="${paperLinks[paper]}" target="_blank" rel="noopener noreferrer">link</a>` : ''}
+      </div>
+      <div class="slides-row">
+        <div class="slide-col">
+          <div class="slide-label label-a">Slide A</div>
+          <iframe src="${basePath}/A_${paper}.pdf"></iframe>
+          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','A')">Expand</button>
+        </div>
+        <div class="slide-col">
+          <div class="slide-label label-b">Slide B</div>
+          <iframe src="${basePath}/B_${paper}.pdf"></iframe>
+          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','B')">Expand</button>
+        </div>
+        <div class="slide-col">
+          <div class="slide-label label-c">Slide C</div>
+          <iframe src="${basePath}/C_${paper}.pdf"></iframe>
+          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','C')">Expand</button>
+        </div>
+        <div class="slide-col">
+          <div class="slide-label label-d">Slide D</div>
+          <iframe src="${basePath}/D_${paper}.pdf"></iframe>
+          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','D')">Expand</button>
+        </div>
+        <div class="slide-col">
+          <div class="slide-label label-e">Slide E</div>
+          <iframe src="${basePath}/E_${paper}.pdf"></iframe>
+          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','E')">Expand</button>
+        </div>
+      </div>
+      <div class="ranking-area">
+        ${criteriaRows}
+      </div>
+    </div>`;
+  });
+
+  container.innerHTML = html;
+  document.getElementById('submit-area').classList.remove('hidden');
+  checkAllComplete();
+}
+
+document.addEventListener('DOMContentLoaded', renderPapers);
+
+const RANK_LABEL = { '1': '1 (Best)', '2': '2', '3': '3', '4': '4', '5': '5 (Worst)' };
+const HOVER_CLOSE_DELAY = 350;
+const dropdownTimers = new WeakMap();
+
+document.addEventListener('mouseover', (e) => {
+  const dd = e.target.closest('.rank-dropdown');
+  if (!dd) return;
+  const t = dropdownTimers.get(dd);
+  if (t) { clearTimeout(t); dropdownTimers.delete(dd); }
+  document.querySelectorAll('.rank-dropdown.open').forEach(o => {
+    if (o !== dd) o.classList.remove('open');
+  });
+  dd.classList.add('open');
+});
+
+document.addEventListener('mouseout', (e) => {
+  const dd = e.target.closest('.rank-dropdown');
+  if (!dd) return;
+  if (dd.contains(e.relatedTarget)) return;
+  const t = setTimeout(() => dd.classList.remove('open'), HOVER_CLOSE_DELAY);
+  dropdownTimers.set(dd, t);
+});
+
+function pickRank(optionEl, paper, criterion, label, value) {
+  const dropdown = optionEl.closest('.rank-dropdown');
+  const prev = rankings[paper][criterion][label];
+  rankings[paper][criterion][label] = value;
+
+  const vals = Object.values(rankings[paper][criterion]).filter(v => v !== '');
+  const hasDuplicates = new Set(vals).size !== vals.length;
+  if (hasDuplicates && value !== '') {
+    alert('Each rank (1, 2, 3, 4, 5) must be used exactly once per criterion.');
+    rankings[paper][criterion][label] = prev;
+    optionEl.blur();
+    return;
+  }
+
+  const trigger = dropdown.querySelector('.rank-trigger');
+  trigger.textContent = RANK_LABEL[value] || '--';
+  trigger.classList.toggle('selected', value !== '');
+  dropdown.classList.remove('open');
+  optionEl.blur();
+
+  const idx = PAPERS.indexOf(paper);
+  const statusEl = document.getElementById(`status-${idx}-${criterion}`);
+  const complete = vals.length === 5 && !hasDuplicates;
+  statusEl.textContent = complete ? 'Complete' : 'Incomplete';
+  statusEl.className = 'rank-status ' + (complete ? 'complete' : 'incomplete');
+
+  checkAllComplete();
+}
+
+function isCriterionComplete(r) {
+  const vals = Object.values(r).filter(v => v !== '');
+  return vals.length === 5 && new Set(vals).size === 5;
+}
+
+function checkAllComplete() {
+  const name = document.getElementById('evaluator-name').value.trim();
+  const allDone = name.length > 0 && PAPERS.every(p => {
+    const r = rankings[p];
+    if (!r) return false;
+    return CRITERIA.every(c => isCriterionComplete(r[c.key]));
+  });
+  document.getElementById('submit-btn').disabled = !allDone;
+}
+
+function showToast(message, type) {
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + type;
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 4000);
+}
+
+function openSlideModal(basePath, paper, activeTab) {
+  const modal = document.createElement('div');
+  modal.className = 'slide-modal';
+  const tabs = ['A','B','C','D','E'];
+  const tabColors = { A: 'tab-a', B: 'tab-b', C: 'tab-c', D: 'tab-d', E: 'tab-e' };
+  const src = `${basePath}/${activeTab}_${paper}.pdf`;
+
+  modal.innerHTML = `
+    <div class="slide-modal-header">
+      <div class="slide-modal-tabs">
+        ${tabs.map(t => `<button class="slide-modal-tab ${tabColors[t]} ${t === activeTab ? 'active' : ''}"
+          onclick="switchModalTab(this,'${basePath}','${paper}','${t}')">${t}</button>`).join('')}
+      </div>
+      <button class="slide-modal-close" onclick="this.closest('.slide-modal').remove()">Close (Esc)</button>
+    </div>
+    <iframe src="${src}"></iframe>`;
+  document.body.appendChild(modal);
+
+  const handler = (e) => {
+    if (e.key === 'Escape') { modal.remove(); document.removeEventListener('keydown', handler); }
+  };
+  document.addEventListener('keydown', handler);
+}
+
+function switchModalTab(btn, basePath, paper, tab) {
+  const modal = btn.closest('.slide-modal');
+  modal.querySelectorAll('.slide-modal-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  modal.querySelector('iframe').src = `${basePath}/${tab}_${paper}.pdf`;
+}
+
+async function submitResults() {
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  const evaluator = document.getElementById('evaluator-name').value.trim();
+  const academicStatus = 'human';
+
+  // Build rows: one row per (paper, criterion)
+  const ts = new Date().toISOString();
+  const rows = [];
+  PAPERS.forEach(paper => {
+    CRITERIA.forEach(c => {
+      rows.push({
+        evaluator,
+        academic_status: academicStatus,
+        topic: TOPIC,
+        paper,
+        criterion: c.key,
+        rank_A: rankings[paper][c.key].A,
+        rank_B: rankings[paper][c.key].B,
+        rank_C: rankings[paper][c.key].C,
+        rank_D: rankings[paper][c.key].D,
+        rank_E: rankings[paper][c.key].E,
+        timestamp: ts
+      });
+    });
+  });
+
+  try {
+    const res = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rows })
+    });
+
+    // no-cors means we can't read the response, but if it didn't throw, it likely worked
+    const overlay = document.createElement('div');
+    overlay.className = 'submitted-overlay';
+    overlay.innerHTML = `
+      <div class="submitted-box">
+        <h2>Thank you!</h2>
+        <p>Your rankings have been submitted successfully.</p>
+      </div>`;
+    document.body.appendChild(overlay);
+  } catch (err) {
+    showToast('Submission failed. Please try again.', 'error');
+    btn.disabled = false;
+    btn.textContent = 'Submit Rankings';
+  }
+}
+</script>
+</body>
+</html>

@@ -1,46 +1,45 @@
 // =====================================================
-// Google Apps Script - paste into the linked Google Sheet
+// Google Apps Script for the slide-refinement goal-evaluation study.
+// Paste into a fresh Google Sheet's Apps Script editor.
 // =====================================================
 //
 // Setup:
-// 1. Create a new Google Sheet
+// 1. Create a new Google Sheet.
 // 2. In row 1, add these headers (in order):
-//    A1: timestamp | B1: evaluator | C1: academic_status | D1: topic |
-//    E1: paper | F1: criterion | G1: rank_A | H1: rank_B | I1: rank_C | J1: rank_D | K1: rank_E
-// 3. Extensions > Apps Script
-// 4. Replace the default code with this file's contents
-// 5. Deploy > New deployment
+//    A1: timestamp | B1: evaluator | C1: topic | D1: paper |
+//    E1: system_slot | F1: baseline | G1: goal_index |
+//    H1: category | I1: requirement | J1: verdict
+// 3. Extensions > Apps Script. Replace the default code with this file.
+// 4. Deploy > New deployment
 //    - Type: Web app
 //    - Execute as: Me
 //    - Who has access: Anyone
-// 6. Copy the deployment URL into APPS_SCRIPT_URL in index.html
+// 5. Copy the deployment URL into APPS_SCRIPT_URL in index.html
 //
-// criterion values: logical_progression | cross_slide_coherence |
-//                   global_coherence | technical_depth | visuals
+// verdict values: "true" | "false"
 // =====================================================
 
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = JSON.parse(e.postData.contents);
-  var rows = data.rows;
+  var rows = data.rows || [];
 
   rows.forEach(function(row) {
     sheet.appendRow([
       row.timestamp,
       row.evaluator,
-      row.academic_status,
       row.topic,
       row.paper,
-      row.criterion,
-      row.rank_A,
-      row.rank_B,
-      row.rank_C,
-      row.rank_D,
-      row.rank_E
+      row.system_slot,
+      row.baseline,
+      row.goal_index,
+      row.category,
+      row.requirement,
+      row.verdict
     ]);
   });
 
   return ContentService
-    .createTextOutput(JSON.stringify({ status: 'ok' }))
+    .createTextOutput(JSON.stringify({ status: 'ok', n: rows.length }))
     .setMimeType(ContentService.MimeType.JSON);
 }

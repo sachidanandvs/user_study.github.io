@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slide Deck Human Evaluation</title>
+<title>Slide Refinement Goal Evaluation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@ body {
   color: #1e293b;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 .page-container {
   max-width: 100%;
@@ -45,122 +45,52 @@ body {
 }
 .content { padding: 0 48px 80px; }
 
-/* Evaluator name */
-.evaluator-section {
-  margin: 40px 0 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.evaluator-section label {
-  font-weight: 700;
-  color: #0f172a;
-  font-size: 1rem;
-  white-space: nowrap;
-}
-.evaluator-section input {
-  padding: 10px 16px;
-  border: 2px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  width: 300px;
-  transition: border-color 0.2s;
-}
-.evaluator-section input:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-}
 
-/* Instructions */
 .instructions {
   background: #f0f6ff;
   border: 1px solid #bfdbfe;
   border-left: 5px solid #2563eb;
   border-radius: 0 12px 12px 0;
-  padding: 28px 36px;
+  padding: 24px 32px;
   margin: 24px 0 36px;
 }
 .instructions h3 {
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.13em;
   color: #64748b;
   font-weight: 700;
 }
-.instructions ol {
-  margin: 0;
-  padding-left: 20px;
-}
-.instructions li {
-  margin-bottom: 8px;
-  color: #334155;
-}
+.instructions ol { margin: 0; padding-left: 20px; }
+.instructions li { margin-bottom: 6px; color: #334155; }
 .instructions li strong { color: #1e40af; }
 
-/* Topic Selection */
-.topic-section { margin: 36px 0; }
-.topic-section h2 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 20px;
-}
-.topic-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.topic-btn {
-  flex: 1;
-  min-width: 200px;
-  padding: 20px 24px;
-  border: 2px solid #bfdbfe;
+.empty-state {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
   border-radius: 12px;
-  background: white;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.2s;
-}
-.topic-btn:hover {
-  border-color: #60a5fa;
-  background: #eff6ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37,99,235,0.15);
-}
-.topic-btn.active {
-  border-color: #2563eb;
-  background: #dbeafe;
-  box-shadow: 0 4px 12px rgba(37,99,235,0.2);
-}
-.topic-btn .topic-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #1e40af;
-  margin-bottom: 4px;
-}
-.topic-btn .topic-desc {
-  font-size: 0.85rem;
+  padding: 48px 24px;
+  text-align: center;
   color: #64748b;
+  margin: 40px 0;
 }
 
-/* Paper Section */
-.papers-container { margin-top: 40px; }
+/* Paper block */
 .paper-block {
   margin-bottom: 56px;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
+  overflow: hidden;
 }
 .paper-header {
   background: #f8fafc;
-  padding: 20px 28px;
+  padding: 18px 24px;
   border-bottom: 1px solid #e2e8f0;
-  border-radius: 16px 16px 0 0;
   display: flex;
   align-items: center;
   gap: 14px;
+  flex-wrap: wrap;
 }
 .paper-num {
   background: #1d4ed8;
@@ -173,242 +103,107 @@ body {
 }
 .paper-header h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #0f172a;
-}
-.slides-row {
-  display: flex;
-  gap: 0;
-}
-.slide-col {
   flex: 1;
-  border-right: 1px solid #e2e8f0;
-  display: flex;
-  flex-direction: column;
+  min-width: 200px;
 }
-.slide-col:last-child { border-right: none; }
-.slide-label {
-  text-align: center;
-  padding: 12px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  background: #f1f5f9;
+
+/* System rows (stacked) */
+.system-row {
   border-bottom: 1px solid #e2e8f0;
 }
-.slide-label.label-a { color: #dc2626; }
-.slide-label.label-b { color: #2563eb; }
-.slide-label.label-c { color: #059669; }
-.slide-label.label-d { color: #7c3aed; }
-.slide-label.label-e { color: #ea580c; }
-.slide-col iframe {
-  width: 100%;
-  height: 80vh;
-  border: none;
-}
-
-/* Expand button */
-.expand-btn {
-  display: block;
-  margin: 8px auto;
-  padding: 8px 22px;
-  background: #dc2626;
-  border: 1.5px solid #b91c1c;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: white;
-  cursor: pointer;
-  transition: all 0.15s;
-  box-shadow: 0 2px 6px rgba(220,38,38,0.25);
-}
-.expand-btn:hover {
-  background: #b91c1c;
-  border-color: #991b1b;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(220,38,38,0.35);
-}
-
-/* Fullscreen modal for expanded slide */
-.slide-modal {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 150;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px;
-}
-.slide-modal-header {
+.system-row:last-child { border-bottom: none; }
+.system-header {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
-  width: 100%;
-  max-width: 1100px;
+  padding: 12px 24px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
 }
-.slide-modal-tabs {
-  display: flex;
-  gap: 4px;
-}
-.slide-modal-tab {
-  padding: 8px 24px;
-  border: none;
-  border-radius: 8px 8px 0 0;
-  font-size: 1rem;
+.system-label {
   font-weight: 700;
-  cursor: pointer;
-  background: rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.7);
-  transition: all 0.15s;
+  font-size: 1.1rem;
 }
-.slide-modal-tab.active { background: white; color: #1e293b; }
-.slide-modal-tab.tab-a.active { color: #dc2626; }
-.slide-modal-tab.tab-b.active { color: #2563eb; }
-.slide-modal-tab.tab-c.active { color: #059669; }
-.slide-modal-tab.tab-d.active { color: #7c3aed; }
-.slide-modal-tab.tab-e.active { color: #ea580c; }
-.slide-modal-close {
-  margin-left: auto;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.15);
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-.slide-modal-close:hover { background: rgba(255,255,255,0.3); }
-.slide-modal iframe {
-  width: 100%;
-  max-width: 1100px;
-  flex: 1;
-  border: none;
-  border-radius: 0 8px 8px 8px;
-  background: white;
-}
-
-/* Ranking */
-.ranking-area {
-  padding: 20px 28px;
-  background: #fafbfc;
-  border-top: 1px solid #e2e8f0;
-  border-radius: 0 0 16px 16px;
-  position: relative;
-  overflow: visible;
-}
-.criterion-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 10px 0;
-  border-bottom: 1px dashed #e2e8f0;
-}
-.criterion-row:last-child { border-bottom: none; }
-.criterion-name {
-  font-weight: 700;
-  color: #1e40af;
-  font-size: 0.95rem;
-  min-width: 200px;
-}
-.ranking-area label {
-  font-weight: 600;
-  color: #334155;
-  font-size: 0.95rem;
-}
-.rank-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.rank-group .rank-label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  min-width: 20px;
-}
-.rank-label-a { color: #dc2626; }
-.rank-label-b { color: #2563eb; }
-.rank-label-c { color: #059669; }
-.rank-label-d { color: #7c3aed; }
-.rank-label-e { color: #ea580c; }
-.rank-dropdown {
-  position: relative;
-  display: inline-block;
-}
-.rank-trigger {
-  padding: 6px 14px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  background: white;
-  cursor: pointer;
-  min-width: 90px;
-  text-align: center;
-  font-weight: 600;
-  color: #94a3b8;
-  user-select: none;
-  transition: all 0.15s;
-}
-.rank-trigger.selected {
-  color: #0f172a;
-  border-color: #2563eb;
-  background: #eff6ff;
-}
-.rank-dropdown.open .rank-trigger,
-.rank-dropdown:hover .rank-trigger {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-}
-.rank-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  margin-top: 4px;
-  background: white;
-  border: 1.5px solid #2563eb;
-  border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-  display: none;
-  z-index: 60;
-  overflow: hidden;
-}
-.rank-dropdown.open .rank-options { display: block; }
-.rank-option {
-  padding: 8px 14px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #334155;
-  text-align: center;
-  transition: background 0.1s;
-}
-.rank-option:hover { background: #dbeafe; color: #1e40af; }
-.rank-group select {
-  padding: 6px 12px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  background: white;
-  cursor: pointer;
-}
-.rank-group select:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-}
-.rank-status {
+.system-label.slot-A { color: #dc2626; }
+.system-label.slot-B { color: #2563eb; }
+.system-label.slot-C { color: #059669; }
+.system-status {
   margin-left: auto;
   font-size: 0.85rem;
   font-weight: 600;
+  color: #94a3b8;
 }
-.rank-status.complete { color: #059669; }
-.rank-status.incomplete { color: #94a3b8; }
+.system-status.complete { color: #059669; }
+.system-deck {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.system-deck iframe {
+  width: 75%;
+  height: 62vh;
+  border: none;
+  display: block;
+}
+
+/* Goals area */
+.goals-area {
+  padding: 10px 20px 12px;
+  background: #fafbfc;
+}
+.goals-area-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #64748b;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.goal-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  flex-wrap: wrap;
+}
+.goal-text {
+  color: #334155;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+.goal-buttons {
+  display: inline-flex;
+  gap: 4px;
+}
+.verdict-btn {
+  padding: 3px 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-family: inherit;
+  font-weight: 700;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.verdict-btn:hover { border-color: #94a3b8; }
+.verdict-btn.true.selected {
+  background: #059669;
+  border-color: #047857;
+  color: white;
+  box-shadow: 0 2px 6px rgba(5,150,105,0.25);
+}
+.verdict-btn.false.selected {
+  background: #dc2626;
+  border-color: #b91c1c;
+  color: white;
+  box-shadow: 0 2px 6px rgba(220,38,38,0.25);
+}
+
 
 .paper-link {
   font-size: 0.8rem;
@@ -418,15 +213,9 @@ body {
   padding: 3px 10px;
   border: 1.5px solid #bfdbfe;
   border-radius: 5px;
-  white-space: nowrap;
-  transition: all 0.15s;
 }
-.paper-link:hover {
-  background: #dbeafe;
-  border-color: #2563eb;
-}
+.paper-link:hover { background: #dbeafe; }
 
-/* Submit */
 .submit-area {
   margin-top: 48px;
   text-align: center;
@@ -442,7 +231,7 @@ body {
   cursor: pointer;
   transition: all 0.2s;
 }
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background: #1e40af;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(37,99,235,0.3);
@@ -450,13 +239,11 @@ body {
 .submit-btn:disabled {
   background: #94a3b8;
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }
+.submit-progress { font-size: 0.9rem; color: #64748b; margin-top: 10px; }
 
 .hidden { display: none; }
 
-/* Success/error toast */
 .toast {
   position: fixed;
   top: 24px;
@@ -464,7 +251,6 @@ body {
   padding: 16px 28px;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 0.95rem;
   z-index: 200;
   animation: slideIn 0.3s ease;
 }
@@ -475,10 +261,9 @@ body {
   to { transform: translateX(0); opacity: 1; }
 }
 
-/* Submitted overlay */
 .submitted-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
@@ -492,70 +277,49 @@ body {
   text-align: center;
   max-width: 480px;
 }
-.submitted-box h2 {
-  margin: 0 0 12px;
-  color: #059669;
-  font-size: 1.5rem;
-}
-.submitted-box p {
-  color: #475569;
-  margin: 0;
-}
+.submitted-box h2 { margin: 0 0 12px; color: #059669; font-size: 1.5rem; }
+.submitted-box p { color: #475569; margin: 0; }
 </style>
 </head>
 <body>
 <div class="page-container">
 
 <div class="page-header">
-  <h1>Slide Deck Human Evaluation &#x1F60A;</h1>
-  <p class="tagline">This study compares the quality of slide decks automatically generated from research papers,<br>focusing on <strong>content and narrative flow</strong>(not Visual Design).</p>
+  <h1>Slide Refinement Goal Evaluation &#x1F50D;</h1>
+  <p class="tagline">For each paper, judge whether the three refined slide decks satisfy the goals they were refined against.</p>
 </div>
 
 <div class="content">
 
-  <div class="evaluator-section">
-    <label for="evaluator-name">Nickname:</label>
-    <input type="text" id="evaluator-name" placeholder="e.g. slide_fan_99" oninput="checkAllComplete()">
-  </div>
-
   <div class="instructions">
-    <h3>Evaluation Criteria</h3>
-    <p style="margin:0 0 12px;color:#475569;font-size:0.9rem;">For each paper, rank the three slide decks (A, B, C, D, E) on <strong>each</strong> of the three criteria below.</p>
-    <p style="margin:16px 0 6px;font-weight:700;color:#1e40af;">Narrative Flow</p>
-    <ol style="margin-top:0;">
-      <li><strong>Logical Progression</strong> &mdash; Does it follow a coherent structure (problem &rarr; method &rarr; evidence) without front-loading technical details?</li>
-      <li><strong>Global Coherence</strong> &mdash; Do all slides support one unified narrative of explaining a paper?</li>
-    </ol>
-    <p style="margin:16px 0 6px;font-weight:700;color:#1e40af;">Content</p>
-    <ol start="3" style="margin-top:0;">
-      <li><strong>Technical Depth</strong> &mdash; Does it include concrete technical substance (method details, experimental validation), rather than a few bullet-point summaries?</li>
-    </ol>
-  </div>
-
-  <div class="instructions" style="border-left-color:#059669;background:#f0fdf4;border-color:#bbf7d0;">
-    <h3>Evaluation Procedure</h3>
+    <h3>Instructions</h3>
     <ol>
-      <li>Review the <strong>5 research documents</strong> listed below.</li>
-      <li>For each document, review five anonymized slide decks (<strong>A, B, C, D, E</strong>) generated by different systems.</li>
-      <li>Click the red <strong>Expand</strong> button below each slide deck to view it in full size for a clearer evaluation.</li>
-      <li>Rank them from <strong>1 (Best)</strong> to <strong>5 (Worst)</strong> based on the criteria above.</li>
-      <li> If needed click the <strong>link</strong> near paper title to open the reference paper the slide is based on.</li>
+      <li>Five random papers are chosen for evaluation.</li>
+      <li>Each paper has <strong>three refined slide decks</strong> (System A, B, C). generated by three different methods and the ordering is randomized.</li>
+      <li>The slide decks are refined by each method such that it satisfies the goals.</li>
+      <li>For each of the <strong>5</strong> goals, mark <strong>True</strong> if the refined deck satisfies it, <strong>False</strong> if not.</li>
+      <li>Goals <em>differ</em>em> across decks even for the same paper &mdash; that's expected.</li>
+      <li>When every goal is answered, click <strong>Submit</strong>.</li>
+      <li><strong>Important:</strong> Evaluate only based on whether the goals are satisfied by the slide deck, not by the content or visual quality</li>
     </ol>
+    <h3 style="margin-top:16px;">Goal Categories</h3>
+    <p style="margin:4px 0 0;color:#334155;font-size:0.85rem;line-height:1.5;">
+      <strong>1.</strong> Content Inclusion/Exclusion &nbsp;
+      <strong>2.</strong> Narrative Structure &nbsp;
+      <strong>3.</strong> Figure &amp; Table Usage &nbsp;
+      <strong>4.</strong> Style &amp; Wording &nbsp;
+      <strong>5.</strong> Deck Composition
+    </p>
     <p style="margin:12px 0 0;color:#475569;font-size:0.9rem;">
-      Systems are anonymized, and A/B/C/D/E order may vary across documents.<br>
       Estimated completion time: <strong>15&ndash;20 minutes</strong> &#x1F642;
     </p>
   </div>
 
-  <div class="topic-section">
-    <h2>Arcbench Results</h2>
-  </div>
+  <div id="papers-container"></div>
 
-  <div id="papers-container" class="papers-container"></div>
-
-  <div id="submit-area" class="submit-area hidden">
-    <button class="submit-btn" id="submit-btn" onclick="submitResults()" disabled>Submit Rankings</button>
-    <p style="font-size:0.85rem;color:#94a3b8;margin-top:12px;">Enter your name and complete all rankings to enable submission.<br>Your thoughtful evaluation is greatly appreciated!</p>
+  <div id="submit-area" class="submit-area">
+    <button class="submit-btn" id="submit-btn" onclick="submitResults()" disabled>Submit Verdicts</button>
+    <p class="submit-progress" id="submit-progress"></p>
   </div>
 
 </div>
@@ -563,54 +327,85 @@ body {
 
 <script>
 // ============================================================
-// IMPORTANT: Replace this with your deployed Google Apps Script URL
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby1WjD_MCPh3qgwMgwlyK5A2tKc20t1XiU8mD5vp4N-vidxCyIc_Z9epgIWqlJeFaguKw/exec';
+// Replace with your deployed Google Apps Script URL for the NEW study sheet.
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxfHctVRBs3X101pa7sY70f9B-qbt-EAUECqERgu3VuF0-CC12CfjKOQHmipnFJBFCP_A/exec';
 // ============================================================
 
-const TOPIC = 'Arcbench_results';
+const TOPIC = 'slide_refinement_eval';
+const N_PAPERS_PER_EVALUATOR = 5;
+const BASELINES = ['autoslides', 'convdeck', 'html'];
+const SLOTS = ['A', 'B', 'C'];
 
-const PAPERS = [
-  "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_ICLR_2025",
-  "Can_MLLMs_Reason_in_Multimodality_ICML_2025",
-  "Candidate_Pseudolabel_Learning_-_Enhancing_Vision-Language_Models_by_ICML_2024",
-  "Video-of-Thought_-_Step-by-Step_Video_Reasoning_from_Perception_to_Cognition_ICML_2024",
-  "OPEN_-VOCABULARY_OBJECT_DETECTION_VIA_ICLR_2025"
+// State: state[paper] = {
+//   slotMap: {A:'autoslides', B:'convdeck', C:'html'},
+//   goals: {autoslides:[...], convdeck:[...], html:[...]},
+//   verdicts: {autoslides:[true|false|null,...], ...}
+// }
+const state = {};
+let papersAll = [
+  "METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024",
+  "Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025",
+  "ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023",
+  "Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023",
+  "NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025",
+  "To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022",
+  "Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025",
+  "CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025",
+  "Rethinking_Image-Scaling_Attacks_ICML_2022",
+  "Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025",
+  "TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025",
+  "MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024",
+  "LEARNING_TO_DISCRETIZE_ICLR_2025",
+  "VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025",
+  "Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022",
+  "DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025",
+  "Data-free_Neural_Representation_Compression_ICML_2024",
+  "Arrows_of_Time_for_Large_Language_Models_ICML_2024",
+  "QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023",
+  "Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025",
+  "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025",
+  "Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023",
+  "Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023",
+  "Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024",
+  "Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023",
+  "Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025",
+  "ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024",
+  "RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022",
+  "Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024",
+  "Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025"
 ];
+let currentPapers = [];
 
-// Each paper's slide files still live under their original subtopic folder on disk.
-const PAPER_FOLDER = {
-  "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_ICLR_2025": "Generative_models",
-  "Can_MLLMs_Reason_in_Multimodality_ICML_2025": "Vision_language_multimodel",
-  "Candidate_Pseudolabel_Learning_-_Enhancing_Vision-Language_Models_by_ICML_2024": "Vision_language_multimodel",
-  "Video-of-Thought_-_Step-by-Step_Video_Reasoning_from_Perception_to_Cognition_ICML_2024": "Vision_language_multimodel",
-  "OPEN_-VOCABULARY_OBJECT_DETECTION_VIA_ICLR_2025": "Computer_vision_core"
-};
+const ALL_GOALS = {"Arrows_of_Time_for_Large_Language_Models_ICML_2024": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include implementation details."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should start with a real-world scenario before introducing the technical problem."},{"category": "Figure and Table Usage Requirements","requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}]},"Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should not reuse the same figure on multiple slides."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide focused on the method’s main failure mode or weakness."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 20 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide comparing the proposed method against one strong baseline."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck defines the evaluation metrics used for the main results."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}]},"Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide comparing the proposed method against one strong baseline."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}]},"Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include implementation details."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 20 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The method section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should place limitations immediately after the main result."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide comparing the proposed method against one strong baseline."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck contains a final slide with a takeaway statement."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should place limitations immediately after the main result."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"Data-free_Neural_Representation_Compression_ICML_2024": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should place limitations immediately after the main result."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}]},"ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include implementation details."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should start with a real-world scenario before introducing the technical problem."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."},{"category": "Figure and Table Usage Requirements","requirement": "Every figure and table should be explained on the slide where it appears."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include a standalone related work slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The method section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}]},"Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The method section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary before the final Thank You slide."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should not reuse the same figure on multiple slides."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Figure and Table Usage Requirements","requirement": "The results section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Figure and Table Usage Requirements","requirement": "The method section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate at least one third of the slides to explaining the proposed method."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."},{"category": "Figure and Table Usage Requirements","requirement": "Every figure and table should be explained on the slide where it appears."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The results section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"LEARNING_TO_DISCRETIZE_ICLR_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck defines the evaluation metrics used for the main results."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include implementation details."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on limitations and open questions than on related work."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}]},"Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck includes at least one qualitative example."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 20 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck defines the evaluation metrics used for the main results."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck includes at least one qualitative example."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include implementation details."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include a standalone related work slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The method section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide comparing the proposed method against one strong baseline."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 20 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The method section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 20 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck contains a final slide with a takeaway statement."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}]},"NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide focused on the method’s main failure mode or weakness."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on limitations and open questions than on related work."},{"category": "Figure and Table Usage Requirements","requirement": "The results section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on limitations and open questions than on related work."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck defines the evaluation metrics used for the main results."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on limitations and open questions than on related work."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Figure and Table Usage Requirements","requirement": "Every figure and table should be explained on the slide where it appears."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 15 slides."},{"category": "Figure and Table Usage Requirements","requirement": "Every figure and table should be explained on the slide where it appears."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include a standalone related work slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should place limitations immediately after the main result."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 15 slides."},{"category": "Figure and Table Usage Requirements","requirement": "Every figure and table should be explained on the slide where it appears."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide focused on the method’s main failure mode or weakness."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Figure and Table Usage Requirements","requirement": "Every figure and table should be explained on the slide where it appears."},{"category": "Style and Wording Requirements","requirement": "No bullet point exceeds 20 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should not reuse the same figure on multiple slides."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate at least one third of the slides to explaining the proposed method."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}]},"Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on limitations and open questions than on related work."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 20 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include a standalone related work slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The results section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}]},"QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should not reuse the same figure on multiple slides."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide comparing the proposed method against one strong baseline."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 20 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide comparing the proposed method against one strong baseline."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The method section includes at least one visual element."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"Rethinking_Image-Scaling_Attacks_ICML_2022": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck defines the evaluation metrics used for the main results."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary before the final Thank You slide."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "No bullet point exceeds 20 words."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should start with a real-world scenario before introducing the technical problem."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}]},"RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on limitations and open questions than on related work."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should not reuse the same figure on multiple slides."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on limitations and open questions than on related work."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}]},"Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary before the final Thank You slide."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 20 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "The slide deck does not use unexplained acronyms."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck defines the evaluation metrics used for the main results."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should end with open questions rather than a standard conclusion summary."},{"category": "Figure and Table Usage Requirements","requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."},{"category": "Style and Wording Requirements","requirement": "Slide titles should be phrased as claims rather than section labels."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}]},"Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate at least one third of the slides to explaining the proposed method."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should introduce the method visually before explaining it textually."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should place limitations immediately after the main result."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should place limitations immediately after the main result."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide focused on the method’s main failure mode or weakness."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on motivation than on experimental setup."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 15 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses third-person language such as “they show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide focused on the method’s main failure mode or weakness."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should not reuse the same figure on multiple slides."},{"category": "Style and Wording Requirements","requirement": "No bullet point exceeds 20 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 15 slides."}]},"To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should include one slide that states the paper’s most surprising or non-obvious finding."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should start with a real-world scenario before introducing the technical problem."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at least 20 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than five figures."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."},{"category": "Figure and Table Usage Requirements","requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should not include citations."}]},"VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025": {"autoslides": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include more than one equation across the whole deck."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck contains no more than two tables."},{"category": "Style and Wording Requirements","requirement": "Each slide title is at most 6 words."},{"category": "Deck Composition Requirements","requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."}],"convdeck": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck should not include a standalone related work slide."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should present the main result before the method explanation."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 5 slides."},{"category": "Figure and Table Usage Requirements","requirement": "The slide deck should avoid tables entirely."},{"category": "Style and Wording Requirements","requirement": "The slide deck uses first-person language such as “we show”."}],"html": [{"category": "Content Inclusion/Exclusion Requirements","requirement": "The slide deck defines the evaluation metrics used for the main results."},{"category": "Narrative Structure Requirements","requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."},{"category": "Figure and Table Usage Requirements","requirement": "Qualitative example slides include text explaining what the viewer should observe."},{"category": "Style and Wording Requirements","requirement": "Every slide should have at least one stylized keyword text(bold/colored)."},{"category": "Deck Composition Requirements","requirement": "The slide deck should contain at most 10 slides."}]}};
 
-const rankings = {};
-
-const CRITERIA = [
-  { key: 'logical_progression', name: 'Logical Progression' },
-  { key: 'global_coherence',    name: 'Global Coherence' },
-  { key: 'technical_depth',     name: 'Technical Depth' }
-];
-
-const paperLinks = {
-  "Adversarial_Robustification_via_Text-to-Image_Diffusion_Models_ECCV_2024": "https://arxiv.org/abs/2407.18658",
-  "Candidate_Pseudolabel_Learning_-_Enhancing_Vision-Language_Models_by_ICML_2024": "https://arxiv.org/abs/2406.10502",
-  "Pose-Aware_Self-Supervised_Learning_with_Viewpoint_Trajectory_Regularization_ECCV_2024": "https://arxiv.org/abs/2403.14973",
-  "Diffusion_Prior-Based_Amortized_Variational_Inference_for_Noisy_Inverse_Problems_ECCV_2024": "https://arxiv.org/abs/2407.16125",
-  "Can_MLLMs_Reason_in_Multimodality_ICML_2025": "https://arxiv.org/abs/2501.05444",
-  "Mask2Map__Vectorized_HD_Map_Construction_Using_Birds_Eye_View_Segmentation_Masks_ECCV_2024": "https://arxiv.org/abs/2407.13517",
-  "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_ICLR_2025": "https://arxiv.org/abs/2406.10808",
-  "Parrot_Captions_Teach_CLIP_to_Spot_Text_ECCV_2024": "https://arxiv.org/abs/2312.14232",
-  "NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025": "https://openreview.net/forum?id=5UKrnKuspb",
-  "TOWARD_GUIDANCE_-F_REE_AR_V_ISUAL_GENERATION_ICLR_2025": "https://arxiv.org/abs/2410.09347",
-  "MMBENCH__Is_Your_Multi-Modal_Model_an_All-around_Player__ECCV_2024": "https://arxiv.org/abs/2307.06281",
-  "OPEN_-VOCABULARY_OBJECT_DETECTION_VIA_ICLR_2025": "https://arxiv.org/abs/2104.13921",
-  "Refining_Generative_Process_with_Discriminator_Guidance_ICML_2023": "https://arxiv.org/abs/2211.17091",
-  "Video-of-Thought_-_Step-by-Step_Video_Reasoning_from_Perception_to_Cognition_ICML_2024": "https://arxiv.org/abs/2501.03230",
-  "Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025": "https://arxiv.org/abs/2406.02548"
-};
+// -------- seeded RNG (mulberry32) --------
+function hashStr(s) {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619) >>> 0;
+  }
+  return h >>> 0;
+}
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function() {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function seededShuffle(arr, seed) {
+  const rng = mulberry32(seed);
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 function prettifyName(name) {
   return name
@@ -620,167 +415,131 @@ function prettifyName(name) {
     .trim();
 }
 
+// -------- bootstrap --------
+let evalSeed;
+
+function init() {
+  // Get or create a persistent random seed
+  let stored = localStorage.getItem('eval_seed');
+  if (!stored) {
+    stored = String(Math.floor(Math.random() * 4294967296));
+    localStorage.setItem('eval_seed', stored);
+  }
+  evalSeed = parseInt(stored, 10);
+  currentPapers = seededShuffle(papersAll, evalSeed).slice(0, N_PAPERS_PER_EVALUATOR);
+  renderPapers();
+}
+
+function loadGoalsFor(paper) {
+  const entry = ALL_GOALS[paper] || {};
+  const out = {};
+  for (const b of BASELINES) {
+    out[b] = entry[b] || [];
+  }
+  return out;
+}
+
 function renderPapers() {
   const container = document.getElementById('papers-container');
-  const papers = PAPERS;
+
+  // Prepare per-paper state.
+  currentPapers.forEach((paper) => {
+    const slotSeed = hashStr(String(evalSeed) + '|' + paper);
+    const shuffled = seededShuffle(BASELINES, slotSeed);
+    const slotMap = { A: shuffled[0], B: shuffled[1], C: shuffled[2] };
+    const goals = loadGoalsFor(paper);
+    const verdicts = {};
+    for (const b of BASELINES) verdicts[b] = goals[b].map(() => null);
+    state[paper] = { slotMap, goals, verdicts };
+  });
+
   let html = '';
+  currentPapers.forEach((paper, i) => {
+    const { slotMap, goals } = state[paper];
+    const systemRows = SLOTS.map((slot) => {
+      const baseline = slotMap[slot];
+      const deckUrl = `preprocessed_decks/${encodeURIComponent(paper)}/${baseline}_grid.pdf`;
+      const goalsList = goals[baseline] || [];
+      const goalsHtml = goalsList.map((g, idx) => `
+            <div class="goal-row">
+              <div class="goal-text"><strong>${idx + 1}.</strong> ${escapeHtml(g.requirement)}</div>
+              <div class="goal-buttons">
+                <button class="verdict-btn true" data-paper="${escapeAttr(paper)}" data-baseline="${baseline}" data-idx="${idx}" data-verdict="true" onclick="pickVerdict(this)">True</button>
+                <button class="verdict-btn false" data-paper="${escapeAttr(paper)}" data-baseline="${baseline}" data-idx="${idx}" data-verdict="false" onclick="pickVerdict(this)">False</button>
+              </div>
+            </div>`).join('');
 
-  papers.forEach((paper, i) => {
-    const basePath = `slide_list/${PAPER_FOLDER[paper]}/${paper}`;
-    rankings[paper] = {};
-    CRITERIA.forEach(c => { rankings[paper][c.key] = { A: '', B: '', C: '', D: '', E: '' }; });
-
-    const rankDropdown = (cKey, label) => `
-          <div class="rank-dropdown">
-            <div class="rank-trigger">--</div>
-            <div class="rank-options">
-              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','')">--</div>
-              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','1')">1 (Best)</div>
-              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','2')">2</div>
-              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','3')">3</div>
-              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','4')">4</div>
-              <div class="rank-option" onclick="pickRank(this,'${paper}','${cKey}','${label}','5')">5 (Worst)</div>
-            </div>
-          </div>`;
-    const criteriaRows = CRITERIA.map(c => `
-        <div class="criterion-row">
-          <span class="criterion-name">${c.name}</span>
-          <div class="rank-group">
-            <span class="rank-label rank-label-a">A</span>
-            ${rankDropdown(c.key, 'A')}
+      return `
+        <div class="system-row">
+          <div class="system-header">
+            <span class="system-label slot-${slot}">System ${slot}</span>
+            <span class="system-status" id="status-${escapeAttr(paper)}-${baseline}">0 / ${goalsList.length} goals</span>
           </div>
-          <div class="rank-group">
-            <span class="rank-label rank-label-b">B</span>
-            ${rankDropdown(c.key, 'B')}
+          <div class="system-deck">
+            <iframe src="${deckUrl}" loading="lazy"></iframe>
           </div>
-          <div class="rank-group">
-            <span class="rank-label rank-label-c">C</span>
-            ${rankDropdown(c.key, 'C')}
+          <div class="goals-area">
+            <p class="goals-area-title">Goals this deck was refined against</p>
+            ${goalsList.length ? goalsHtml : '<p style="color:#94a3b8;">No goals available.</p>'}
           </div>
-          <div class="rank-group">
-            <span class="rank-label rank-label-d">D</span>
-            ${rankDropdown(c.key, 'D')}
-          </div>
-          <div class="rank-group">
-            <span class="rank-label rank-label-e">E</span>
-            ${rankDropdown(c.key, 'E')}
-          </div>
-          <span class="rank-status incomplete" id="status-${i}-${c.key}">Incomplete</span>
-        </div>`).join('');
+        </div>`;
+    }).join('');
 
     html += `
-    <div class="paper-block" id="paper-${i}">
-      <div class="paper-header">
-        <span class="paper-num">Paper ${i + 1}</span>
-        <h3>${prettifyName(paper)}</h3>
-        ${paperLinks[paper] ? `<a class="paper-link" href="${paperLinks[paper]}" target="_blank" rel="noopener noreferrer">link</a>` : ''}
-      </div>
-      <div class="slides-row">
-        <div class="slide-col">
-          <div class="slide-label label-a">Slide A</div>
-          <iframe src="${basePath}/A_${paper}.pdf"></iframe>
-          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','A')">Expand</button>
+      <div class="paper-block">
+        <div class="paper-header">
+          <span class="paper-num">Paper ${i + 1}</span>
+          <h3>${escapeHtml(prettifyName(paper))}</h3>
         </div>
-        <div class="slide-col">
-          <div class="slide-label label-b">Slide B</div>
-          <iframe src="${basePath}/B_${paper}.pdf"></iframe>
-          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','B')">Expand</button>
-        </div>
-        <div class="slide-col">
-          <div class="slide-label label-c">Slide C</div>
-          <iframe src="${basePath}/C_${paper}.pdf"></iframe>
-          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','C')">Expand</button>
-        </div>
-        <div class="slide-col">
-          <div class="slide-label label-d">Slide D</div>
-          <iframe src="${basePath}/D_${paper}.pdf"></iframe>
-          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','D')">Expand</button>
-        </div>
-        <div class="slide-col">
-          <div class="slide-label label-e">Slide E</div>
-          <iframe src="${basePath}/E_${paper}.pdf"></iframe>
-          <button class="expand-btn" onclick="openSlideModal('${basePath}','${paper}','E')">Expand</button>
-        </div>
-      </div>
-      <div class="ranking-area">
-        ${criteriaRows}
-      </div>
-    </div>`;
+        ${systemRows}
+      </div>`;
   });
 
   container.innerHTML = html;
-  document.getElementById('submit-area').classList.remove('hidden');
-  checkAllComplete();
+  updateProgress();
 }
 
-document.addEventListener('DOMContentLoaded', renderPapers);
+function pickVerdict(btn) {
+  const paper = btn.dataset.paper;
+  const baseline = btn.dataset.baseline;
+  const idx = parseInt(btn.dataset.idx, 10);
+  const verdict = btn.dataset.verdict === 'true';
+  state[paper].verdicts[baseline][idx] = verdict;
 
-const RANK_LABEL = { '1': '1 (Best)', '2': '2', '3': '3', '4': '4', '5': '5 (Worst)' };
-const HOVER_CLOSE_DELAY = 350;
-const dropdownTimers = new WeakMap();
+  // Update button styling within this goal row.
+  const row = btn.closest('.goal-row');
+  row.querySelectorAll('.verdict-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
 
-document.addEventListener('mouseover', (e) => {
-  const dd = e.target.closest('.rank-dropdown');
-  if (!dd) return;
-  const t = dropdownTimers.get(dd);
-  if (t) { clearTimeout(t); dropdownTimers.delete(dd); }
-  document.querySelectorAll('.rank-dropdown.open').forEach(o => {
-    if (o !== dd) o.classList.remove('open');
-  });
-  dd.classList.add('open');
-});
-
-document.addEventListener('mouseout', (e) => {
-  const dd = e.target.closest('.rank-dropdown');
-  if (!dd) return;
-  if (dd.contains(e.relatedTarget)) return;
-  const t = setTimeout(() => dd.classList.remove('open'), HOVER_CLOSE_DELAY);
-  dropdownTimers.set(dd, t);
-});
-
-function pickRank(optionEl, paper, criterion, label, value) {
-  const dropdown = optionEl.closest('.rank-dropdown');
-  const prev = rankings[paper][criterion][label];
-  rankings[paper][criterion][label] = value;
-
-  const vals = Object.values(rankings[paper][criterion]).filter(v => v !== '');
-  const hasDuplicates = new Set(vals).size !== vals.length;
-  if (hasDuplicates && value !== '') {
-    alert('Each rank (1, 2, 3, 4, 5) must be used exactly once per criterion.');
-    rankings[paper][criterion][label] = prev;
-    optionEl.blur();
-    return;
+  // Update system status.
+  const verdicts = state[paper].verdicts[baseline];
+  const answered = verdicts.filter(v => v !== null).length;
+  const total = verdicts.length;
+  const statusEl = document.getElementById(`status-${paper}-${baseline}`);
+  if (statusEl) {
+    statusEl.textContent = `${answered} / ${total} goals`;
+    statusEl.classList.toggle('complete', answered === total && total > 0);
   }
 
-  const trigger = dropdown.querySelector('.rank-trigger');
-  trigger.textContent = RANK_LABEL[value] || '--';
-  trigger.classList.toggle('selected', value !== '');
-  dropdown.classList.remove('open');
-  optionEl.blur();
-
-  const idx = PAPERS.indexOf(paper);
-  const statusEl = document.getElementById(`status-${idx}-${criterion}`);
-  const complete = vals.length === 5 && !hasDuplicates;
-  statusEl.textContent = complete ? 'Complete' : 'Incomplete';
-  statusEl.className = 'rank-status ' + (complete ? 'complete' : 'incomplete');
-
-  checkAllComplete();
+  updateProgress();
 }
 
-function isCriterionComplete(r) {
-  const vals = Object.values(r).filter(v => v !== '');
-  return vals.length === 5 && new Set(vals).size === 5;
-}
-
-function checkAllComplete() {
-  const name = document.getElementById('evaluator-name').value.trim();
-  const allDone = name.length > 0 && PAPERS.every(p => {
-    const r = rankings[p];
-    if (!r) return false;
-    return CRITERIA.every(c => isCriterionComplete(r[c.key]));
-  });
+function updateProgress() {
+  let answered = 0, total = 0;
+  for (const paper of currentPapers) {
+    if (!state[paper]) continue;
+    for (const b of BASELINES) {
+      const v = state[paper].verdicts[b];
+      total += v.length;
+      answered += v.filter(x => x !== null).length;
+    }
+  }
+  const allDone = total > 0 && answered === total;
   document.getElementById('submit-btn').disabled = !allDone;
+  document.getElementById('submit-progress').textContent =
+    `${answered} / ${total} goals answered`;
 }
+
 
 function showToast(message, type) {
   const toast = document.createElement('div');
@@ -790,89 +549,82 @@ function showToast(message, type) {
   setTimeout(() => toast.remove(), 4000);
 }
 
-function openSlideModal(basePath, paper, activeTab) {
-  const modal = document.createElement('div');
-  modal.className = 'slide-modal';
-  const tabs = ['A','B','C','D','E'];
-  const tabColors = { A: 'tab-a', B: 'tab-b', C: 'tab-c', D: 'tab-d', E: 'tab-e' };
-  const src = `${basePath}/${activeTab}_${paper}.pdf`;
-
-  modal.innerHTML = `
-    <div class="slide-modal-header">
-      <div class="slide-modal-tabs">
-        ${tabs.map(t => `<button class="slide-modal-tab ${tabColors[t]} ${t === activeTab ? 'active' : ''}"
-          onclick="switchModalTab(this,'${basePath}','${paper}','${t}')">${t}</button>`).join('')}
-      </div>
-      <button class="slide-modal-close" onclick="this.closest('.slide-modal').remove()">Close (Esc)</button>
-    </div>
-    <iframe src="${src}"></iframe>`;
-  document.body.appendChild(modal);
-
-  const handler = (e) => {
-    if (e.key === 'Escape') { modal.remove(); document.removeEventListener('keydown', handler); }
-  };
-  document.addEventListener('keydown', handler);
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
 }
-
-function switchModalTab(btn, basePath, paper, tab) {
-  const modal = btn.closest('.slide-modal');
-  modal.querySelectorAll('.slide-modal-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  modal.querySelector('iframe').src = `${basePath}/${tab}_${paper}.pdf`;
-}
+function escapeAttr(s) { return escapeHtml(s); }
 
 async function submitResults() {
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
   btn.textContent = 'Submitting...';
 
-  const evaluator = document.getElementById('evaluator-name').value.trim();
-  const academicStatus = 'human';
-
-  // Build rows: one row per (paper, criterion)
+  const evaluator = 'user_' + evalSeed;
   const ts = new Date().toISOString();
   const rows = [];
-  PAPERS.forEach(paper => {
-    CRITERIA.forEach(c => {
-      rows.push({
-        evaluator,
-        academic_status: academicStatus,
-        topic: TOPIC,
-        paper,
-        criterion: c.key,
-        rank_A: rankings[paper][c.key].A,
-        rank_B: rankings[paper][c.key].B,
-        rank_C: rankings[paper][c.key].C,
-        rank_D: rankings[paper][c.key].D,
-        rank_E: rankings[paper][c.key].E,
-        timestamp: ts
+  for (const paper of currentPapers) {
+    const { slotMap, goals, verdicts } = state[paper];
+    // Reverse slot map: baseline -> slot
+    const baselineToSlot = {};
+    for (const s of SLOTS) baselineToSlot[slotMap[s]] = s;
+    for (const baseline of BASELINES) {
+      goals[baseline].forEach((g, idx) => {
+        rows.push({
+          timestamp: ts,
+          evaluator,
+          topic: TOPIC,
+          paper,
+          system_slot: baselineToSlot[baseline],
+          baseline,
+          goal_index: idx,
+          category: g.category || '',
+          requirement: g.requirement || '',
+          verdict: verdicts[baseline][idx] ? 'true' : 'false'
+        });
       });
-    });
-  });
+    }
+  }
+
+  if (!APPS_SCRIPT_URL) {
+    // Fallback: download as JSON so the evaluator's work isn't lost during setup.
+    const blob = new Blob([JSON.stringify({ rows }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${evaluator}_verdicts_${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('APPS_SCRIPT_URL is empty — downloaded verdicts as JSON instead.', 'error');
+    btn.disabled = false;
+    btn.textContent = 'Submit Verdicts';
+    return;
+  }
 
   try {
-    const res = await fetch(APPS_SCRIPT_URL, {
+    await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ rows })
     });
-
-    // no-cors means we can't read the response, but if it didn't throw, it likely worked
     const overlay = document.createElement('div');
     overlay.className = 'submitted-overlay';
     overlay.innerHTML = `
       <div class="submitted-box">
         <h2>Thank you!</h2>
-        <p>Your rankings have been submitted successfully.</p>
+        <p>Your verdicts have been submitted successfully.</p>
       </div>`;
     document.body.appendChild(overlay);
   } catch (err) {
     showToast('Submission failed. Please try again.', 'error');
     btn.disabled = false;
-    btn.textContent = 'Submit Rankings';
+    btn.textContent = 'Submit Verdicts';
   }
 }
+
+document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
 </html>
