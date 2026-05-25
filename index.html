@@ -155,12 +155,12 @@ body {
   background: #fafbfc;
 }
 .goals-area-title {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  color: #64748b;
-  font-weight: 700;
-  margin: 0 0 6px;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #dc2626;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 .goal-row {
   display: flex;
@@ -483,7 +483,7 @@ function renderPapers() {
             <iframe src="${deckUrl}" loading="lazy"></iframe>
           </div>
           <div class="goals-area">
-            <p class="goals-area-title">Goals this deck was refined against</p>
+            <p class="goals-area-title">Are these goals satisfied by the refined slide deck?</p>
             ${goalsList.length ? goalsHtml : '<p style="color:#94a3b8;">No goals available.</p>'}
           </div>
         </div>`;
