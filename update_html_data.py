@@ -23,6 +23,8 @@ PAPERS_BEGIN = "// === BEGIN PAPERS_ALL ==="
 PAPERS_END   = "// === END PAPERS_ALL ==="
 GOALS_BEGIN  = "// === BEGIN ALL_GOALS ==="
 GOALS_END    = "// === END ALL_GOALS ==="
+DECKS_BEGIN  = "// === BEGIN DECK_FILES ==="
+DECKS_END    = "// === END DECK_FILES ==="
 
 
 def load_goals(goals_root: Path, paper: str):
@@ -53,6 +55,8 @@ def main():
     here = Path(__file__).resolve().parent
     ap.add_argument("--papers",   type=Path, default=here / "papers.json")
     ap.add_argument("--goals",    type=Path, default=here / "goals")
+    ap.add_argument("--decks",    type=Path, default=here / "preprocessed_decks",
+                    help="Dir containing per-paper decks_map.json")
     ap.add_argument("--html",     type=Path, default=here / "index.html")
     args = ap.parse_args()
 
@@ -66,12 +70,23 @@ def main():
     papers = json.loads(args.papers.read_text())
     all_goals = {paper: load_goals(args.goals, paper) for paper in papers}
 
+    deck_files = {}
+    for paper in papers:
+        m = args.decks / paper / "decks_map.json"
+        if not m.exists():
+            print(f"WARN: missing {m} (run preprocess_decks.py)", file=sys.stderr)
+            deck_files[paper] = {}
+            continue
+        deck_files[paper] = json.loads(m.read_text())
+
     papers_js = "let papersAll = " + json.dumps(papers, indent=2, ensure_ascii=False) + ";\n"
     goals_js  = "const ALL_GOALS = " + json.dumps(all_goals, ensure_ascii=False) + ";\n"
+    decks_js  = "const DECK_FILES = " + json.dumps(deck_files, ensure_ascii=False) + ";\n"
 
     html = args.html.read_text()
     html = replace_block(html, PAPERS_BEGIN, PAPERS_END, papers_js)
     html = replace_block(html, GOALS_BEGIN,  GOALS_END,  goals_js)
+    html = replace_block(html, DECKS_BEGIN,  DECKS_END,  decks_js)
     args.html.write_text(html)
 
     n_goals = sum(len(v) for paper in all_goals.values() for v in paper.values())
