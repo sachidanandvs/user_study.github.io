@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck contains a final slide with a takeaway statement."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The method section includes at least one visual element."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses third-person language such as \u201cthey show\u201d."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 10 slides."
+  }
+]

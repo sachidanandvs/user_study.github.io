@@ -26,6 +26,14 @@ from typing import Optional
 
 CONVDECK_PREFIX = re.compile(r"^paper\d+_")
 
+# If convdeck's goal list for a candidate paper contains any of these
+# requirement strings (exact, case-sensitive match against the `goal` field
+# inside satisfaction_eval.json), the paper is skipped entirely and we draw
+# another from the shuffled pool.
+IGNORE_GOALS = [
+    "The slide deck should contain at most 5 slides."
+]
+
 
 def canonical_convdeck(name: str) -> str:
     return CONVDECK_PREFIX.sub("", name)
@@ -63,6 +71,21 @@ def load_convdeck_goals(folder: Path):
     data = json.loads(path.read_text())
     return [{"category": g.get("category", ""), "requirement": g.get("goal", "")}
             for g in data.get("goal_evaluations", [])]
+
+
+def convdeck_ignored_goal(folder: Path, ignore_set):
+    """If convdeck has any ignored goal, return the matched string; else None."""
+    if not ignore_set:
+        return None
+    path = folder / "satisfaction_eval.json"
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text())
+    for g in data.get("goal_evaluations", []):
+        text = g.get("goal", "")
+        if text in ignore_set:
+            return text
+    return None
 
 
 def load_html_goals(folder: Path):
@@ -174,37 +197,72 @@ def main():
     pool = list(common)
     rng.shuffle(pool)
 
+    ignore_set = set(IGNORE_GOALS)
+    if ignore_set:
+        print(f"Filtering out papers whose convdeck has any of {len(ignore_set)} ignored goal(s).")
+
     staged = []
     used = []
-    skipped = []
+    skipped_missing = []
+    skipped_ignored = []
     i = 0
     while len(staged) < args.n and i < len(pool):
         paper = pool[i]
         i += 1
+
+        matched = convdeck_ignored_goal(convdeck[paper], ignore_set)
+        if matched is not None:
+            print(f"  [filter] {paper}: convdeck has ignored goal: {matched!r}", file=sys.stderr)
+            skipped_ignored.append({"paper": paper, "matched": matched})
+            continue
+
         entry = stage_paper(paper, autoslides[paper], convdeck[paper], html[paper],
                             args.dst, args.force)
         if entry is None:
-            skipped.append(paper)
+            skipped_missing.append(paper)
             continue
         staged.append(entry)
         used.append(paper)
-
-    if len(staged) < args.n:
-        print(f"WARN: only staged {len(staged)} / {args.n} papers", file=sys.stderr)
 
     (args.dst / "papers.json").write_text(json.dumps(used, indent=2))
     manifest = {
         "n_papers": len(staged),
         "seed": args.seed,
         "src": str(args.src),
-        "skipped": skipped,
+        "ignore_goals": list(IGNORE_GOALS),
+        "skipped_due_to_ignored_goal": skipped_ignored,
+        "skipped_due_to_missing_files": skipped_missing,
         "papers": staged,
     }
     (args.dst / "manifest.json").write_text(json.dumps(manifest, indent=2))
 
     print(f"\nStaged {len(staged)} papers under {args.dst}")
-    print(f"Skipped {len(skipped)} papers (missing files)")
+    print(f"Skipped {len(skipped_missing)} papers (missing files)")
+    print(f"Skipped {len(skipped_ignored)} papers (matched ignored goal)")
     print(f"Wrote papers.json and manifest.json")
+
+    if args.force:
+        keep = set(used)
+        pruned = 0
+        for sub in ("decks", "goals", "preprocessed_decks"):
+            root = args.dst / sub
+            if not root.exists():
+                continue
+            for child in root.iterdir():
+                if child.is_dir() and child.name not in keep:
+                    shutil.rmtree(child)
+                    pruned += 1
+        if pruned:
+            print(f"Pruned {pruned} stale paper dir(s) from decks/goals/preprocessed_decks (--force).")
+
+    if len(staged) < args.n:
+        print(f"\nERROR: only staged {len(staged)} / {args.n} papers — pool exhausted.",
+              file=sys.stderr)
+        print(f"  candidates considered: {i} / {len(pool)}", file=sys.stderr)
+        print(f"  filtered by ignore list: {len(skipped_ignored)}", file=sys.stderr)
+        print(f"  filtered by missing files: {len(skipped_missing)}", file=sys.stderr)
+        print(f"Loosen IGNORE_GOALS or lower --n.", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

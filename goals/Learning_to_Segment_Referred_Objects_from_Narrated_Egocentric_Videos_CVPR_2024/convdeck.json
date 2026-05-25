@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck should avoid tables entirely."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Each slide title is at most 6 words."
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck defines the evaluation metrics used for the main results."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should spend more space on motivation than on experimental setup."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at least 20 slides."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck should not reuse the same figure on multiple slides."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck does not use unexplained acronyms."
+  }
+]
