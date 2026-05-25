@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should include one slide focused on the method\u2019s main failure mode or weakness."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should spend more space on motivation than on experimental setup."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "Qualitative example slides include text explaining what the viewer should observe."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses third-person language such as \u201cthey show\u201d."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 15 slides."
+  }
+]

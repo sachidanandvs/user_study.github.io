@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck includes at least one qualitative example."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses first-person language such as \u201cwe show\u201d."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."
+  }
+]

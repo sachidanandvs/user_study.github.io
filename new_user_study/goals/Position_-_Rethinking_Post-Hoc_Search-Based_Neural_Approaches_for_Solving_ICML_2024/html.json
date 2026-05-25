@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include more than one equation across the whole deck."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The results section includes at least one visual element."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Every slide should have at least one stylized keyword text(bold/colored)."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 5 slides."
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should include one slide focused on the method\u2019s main failure mode or weakness."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck should not reuse the same figure on multiple slides."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "No bullet point exceeds 20 words."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 15 slides."
+  }
+]

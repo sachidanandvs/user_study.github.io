@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at least 15 slides."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "Every figure and table should be explained on the slide where it appears."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Each slide title is at most 6 words."
+  }
+]

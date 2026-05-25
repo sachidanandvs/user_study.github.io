@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should contain a concluding content slide with a clear takeaway statement before the final Thank You slide."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should introduce the method visually before explaining it textually."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 5 slides."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck should avoid tables entirely."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses first-person language such as \u201cwe show\u201d."
+  }
+]

@@ -1,0 +1,638 @@
+{
+  "n_papers": 30,
+  "seed": 42,
+  "src": "/work/nvme/bgbc/sv69/llm_test/PPTAgent-experiment/user_study_data",
+  "skipped": [],
+  "papers": [
+    {
+      "paper": "METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024",
+      "autoslides": {
+        "deck": "decks/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/round4_final.pdf",
+        "goals": "goals/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper34_METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/final.pptx",
+        "goals": "goals/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/html.pdf",
+        "deck_source": "html_user_sim/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/final.pdf",
+        "goals": "goals/METAGPT_-_M_ETA_PROGRAMMING_FOR_A_MULTI-AGENT_COLLABORATIVE_FRAMEWORK_ICLR_2024/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025",
+      "autoslides": {
+        "deck": "decks/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/round3_final.pdf",
+        "goals": "goals/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper92_Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/final.pptx",
+        "goals": "goals/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/html.pdf",
+        "deck_source": "html_user_sim/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/final.pdf",
+        "goals": "goals/Model_Immunization_from_a_Condition_Number_Perspective_ICML_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023",
+      "autoslides": {
+        "deck": "decks/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/round3_final.pdf",
+        "goals": "goals/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper21_ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/final.pptx",
+        "goals": "goals/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/html.pdf",
+        "deck_source": "html_user_sim/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/final.pdf",
+        "goals": "goals/ODS_-_Test-Time_Adaptation_in_the_Presence_of_Open-World_Data_Shift_ICML_2023/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023",
+      "autoslides": {
+        "deck": "decks/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/round1_final.pdf",
+        "goals": "goals/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper16_Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/final.pptx",
+        "goals": "goals/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/html.pdf",
+        "deck_source": "html_user_sim/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/final.pdf",
+        "goals": "goals/Audio_Pre-Training_with_Acoustic_Tokenizers_ICML_2023/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025",
+      "autoslides": {
+        "deck": "decks/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/round1_final.pdf",
+        "goals": "goals/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper75_NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/final.pptx",
+        "goals": "goals/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/html.pdf",
+        "deck_source": "html_user_sim/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/final.pdf",
+        "goals": "goals/NEURAL_PLANE_-_S_TRUCTURED_3D_R_ECONSTRUCTION_ICLR_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022",
+      "autoslides": {
+        "deck": "decks/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/round4_final.pdf",
+        "goals": "goals/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper10_To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/final.pptx",
+        "goals": "goals/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/html.pdf",
+        "deck_source": "html_user_sim/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/final.pdf",
+        "goals": "goals/To_Smooth_or_Not_When_Label_Smoothing_Meets_Noisy_Labels_ICML_2022/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025",
+      "autoslides": {
+        "deck": "decks/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/round5_final.pdf",
+        "goals": "goals/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper89_Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/final.pptx",
+        "goals": "goals/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/html.pdf",
+        "deck_source": "html_user_sim/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/final.pdf",
+        "goals": "goals/Foundation_Model_Insights_and_a_Multi-Model_Approach_for_ICML_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025",
+      "autoslides": {
+        "deck": "decks/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/round1_final.pdf",
+        "goals": "goals/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper64_CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/final.pptx",
+        "goals": "goals/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/html.pdf",
+        "deck_source": "html_user_sim/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/final.pdf",
+        "goals": "goals/CYBER_HOST_-_A_O_NE-STAGE_DIFFUSION_FRAMEWORK_ICLR_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Rethinking_Image-Scaling_Attacks_ICML_2022",
+      "autoslides": {
+        "deck": "decks/Rethinking_Image-Scaling_Attacks_ICML_2022/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Rethinking_Image-Scaling_Attacks_ICML_2022/round3_final.pdf",
+        "goals": "goals/Rethinking_Image-Scaling_Attacks_ICML_2022/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Rethinking_Image-Scaling_Attacks_ICML_2022/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper8_Rethinking_Image-Scaling_Attacks_ICML_2022/final.pptx",
+        "goals": "goals/Rethinking_Image-Scaling_Attacks_ICML_2022/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Rethinking_Image-Scaling_Attacks_ICML_2022/html.pdf",
+        "deck_source": "html_user_sim/Rethinking_Image-Scaling_Attacks_ICML_2022/final.pdf",
+        "goals": "goals/Rethinking_Image-Scaling_Attacks_ICML_2022/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025",
+      "autoslides": {
+        "deck": "decks/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/round5_final.pdf",
+        "goals": "goals/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper78_Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/final.pptx",
+        "goals": "goals/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/html.pdf",
+        "deck_source": "html_user_sim/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/final.pdf",
+        "goals": "goals/Open-YOLO_3D_-_Towards_Fast_and_Accurate_Open-Vocabulary_3D_Instance_Segmentation_ICLR_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025",
+      "autoslides": {
+        "deck": "decks/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/round3_final.pdf",
+        "goals": "goals/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper84_TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/final.pptx",
+        "goals": "goals/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/html.pdf",
+        "deck_source": "html_user_sim/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/final.pdf",
+        "goals": "goals/TIME_MIXER__-_A_G_ENERAL_TIME_SERIES_PATTERN_ICLR_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024",
+      "autoslides": {
+        "deck": "decks/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/round2_final.pdf",
+        "goals": "goals/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper46_MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/final.pptx",
+        "goals": "goals/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/html.pdf",
+        "deck_source": "html_user_sim/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/final.pdf",
+        "goals": "goals/MorphGrower_-_A_Synchronized_Layer-by-layer_Growing_Approach_for_ICML_2024/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "LEARNING_TO_DISCRETIZE_ICLR_2025",
+      "autoslides": {
+        "deck": "decks/LEARNING_TO_DISCRETIZE_ICLR_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/LEARNING_TO_DISCRETIZE_ICLR_2025/round2_final.pdf",
+        "goals": "goals/LEARNING_TO_DISCRETIZE_ICLR_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/LEARNING_TO_DISCRETIZE_ICLR_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper73_LEARNING_TO_DISCRETIZE_ICLR_2025/final.pptx",
+        "goals": "goals/LEARNING_TO_DISCRETIZE_ICLR_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/LEARNING_TO_DISCRETIZE_ICLR_2025/html.pdf",
+        "deck_source": "html_user_sim/LEARNING_TO_DISCRETIZE_ICLR_2025/final.pdf",
+        "goals": "goals/LEARNING_TO_DISCRETIZE_ICLR_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025",
+      "autoslides": {
+        "deck": "decks/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/round2_final.pdf",
+        "goals": "goals/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper95_VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/final.pptx",
+        "goals": "goals/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/html.pdf",
+        "deck_source": "html_user_sim/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/final.pdf",
+        "goals": "goals/VideoRoPE_-_What_Makes_for_Good_Video_Rotary_Position_Embedding_ICML_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022",
+      "autoslides": {
+        "deck": "decks/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/round1_final.pdf",
+        "goals": "goals/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper6_Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/final.pptx",
+        "goals": "goals/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/html.pdf",
+        "deck_source": "html_user_sim/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/final.pdf",
+        "goals": "goals/Path-Gradient_Estimators_for_Continuous_Normalizing_Flows_ICML_2022/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025",
+      "autoslides": {
+        "deck": "decks/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/round2_final.pdf",
+        "goals": "goals/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper65_DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/final.pptx",
+        "goals": "goals/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/html.pdf",
+        "deck_source": "html_user_sim/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/final.pdf",
+        "goals": "goals/DEPT_-_D_ECOUPLED_EMBEDDINGS_FOR_PRE_ICLR_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Data-free_Neural_Representation_Compression_ICML_2024",
+      "autoslides": {
+        "deck": "decks/Data-free_Neural_Representation_Compression_ICML_2024/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Data-free_Neural_Representation_Compression_ICML_2024/round1_final.pdf",
+        "goals": "goals/Data-free_Neural_Representation_Compression_ICML_2024/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Data-free_Neural_Representation_Compression_ICML_2024/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper41_Data-free_Neural_Representation_Compression_ICML_2024/final.pptx",
+        "goals": "goals/Data-free_Neural_Representation_Compression_ICML_2024/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Data-free_Neural_Representation_Compression_ICML_2024/html.pdf",
+        "deck_source": "html_user_sim/Data-free_Neural_Representation_Compression_ICML_2024/final.pdf",
+        "goals": "goals/Data-free_Neural_Representation_Compression_ICML_2024/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Arrows_of_Time_for_Large_Language_Models_ICML_2024",
+      "autoslides": {
+        "deck": "decks/Arrows_of_Time_for_Large_Language_Models_ICML_2024/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Arrows_of_Time_for_Large_Language_Models_ICML_2024/round1_final.pdf",
+        "goals": "goals/Arrows_of_Time_for_Large_Language_Models_ICML_2024/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Arrows_of_Time_for_Large_Language_Models_ICML_2024/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper37_Arrows_of_Time_for_Large_Language_Models_ICML_2024/final.pptx",
+        "goals": "goals/Arrows_of_Time_for_Large_Language_Models_ICML_2024/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Arrows_of_Time_for_Large_Language_Models_ICML_2024/html.pdf",
+        "deck_source": "html_user_sim/Arrows_of_Time_for_Large_Language_Models_ICML_2024/final.pdf",
+        "goals": "goals/Arrows_of_Time_for_Large_Language_Models_ICML_2024/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023",
+      "autoslides": {
+        "deck": "decks/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/round5_final.pdf",
+        "goals": "goals/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper29_QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/final.pptx",
+        "goals": "goals/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/html.pdf",
+        "deck_source": "html_user_sim/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/final.pdf",
+        "goals": "goals/QL_ORA_-_Efficient_Finetuning_of_Quantized_LLMs_NeurIPS_2023/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025",
+      "autoslides": {
+        "deck": "decks/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/round3_final.pdf",
+        "goals": "goals/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper93_Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/final.pptx",
+        "goals": "goals/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/html.pdf",
+        "deck_source": "html_user_sim/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/final.pdf",
+        "goals": "goals/Position_-_Current_Model_Licensing_Practices_are_Dragging_Us_into_a_Quagmire_of_Legal_Noncompliance_ICML_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025",
+      "autoslides": {
+        "deck": "decks/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/round5_final.pdf",
+        "goals": "goals/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper70_IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/final.pptx",
+        "goals": "goals/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/html.pdf",
+        "deck_source": "html_user_sim/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/final.pdf",
+        "goals": "goals/IMPROVING_PROBABILISTIC_DIFFUSION_MODELS_WITH_2_ICLR_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023",
+      "autoslides": {
+        "deck": "decks/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/round5_final.pdf",
+        "goals": "goals/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper26_Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/final.pptx",
+        "goals": "goals/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/html.pdf",
+        "deck_source": "html_user_sim/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/final.pdf",
+        "goals": "goals/Causal_normalizing_flows_-_from_theory_to_practice_NeurIPS_2023/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023",
+      "autoslides": {
+        "deck": "decks/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/round1_final.pdf",
+        "goals": "goals/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper24_Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/final.pptx",
+        "goals": "goals/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/html.pdf",
+        "deck_source": "html_user_sim/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/final.pdf",
+        "goals": "goals/Subequivariant_Graph_Reinforcement_Learning_in_3D_Environments_ICML_2023/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024",
+      "autoslides": {
+        "deck": "decks/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/round2_final.pdf",
+        "goals": "goals/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper40_Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/final.pptx",
+        "goals": "goals/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/html.pdf",
+        "deck_source": "html_user_sim/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/final.pdf",
+        "goals": "goals/Challenges_in_Training_PINNs_-_A_Loss_Landscape_Perspective_ICML_2024/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023",
+      "autoslides": {
+        "deck": "decks/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/round1_final.pdf",
+        "goals": "goals/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper27_Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/final.pptx",
+        "goals": "goals/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/html.pdf",
+        "deck_source": "html_user_sim/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/final.pdf",
+        "goals": "goals/Conformal_Meta-learners_for_Predictive_Inference_of_NeurIPS_2023/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025",
+      "autoslides": {
+        "deck": "decks/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/round5_final.pdf",
+        "goals": "goals/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper60_Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/final.pptx",
+        "goals": "goals/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/html.pdf",
+        "deck_source": "html_user_sim/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/final.pdf",
+        "goals": "goals/Learning_Streaming_Video_Representation_via_Multitask_Training_ICCV_2025/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024",
+      "autoslides": {
+        "deck": "decks/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/round4_final.pdf",
+        "goals": "goals/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper42_ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/final.pptx",
+        "goals": "goals/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/html.pdf",
+        "deck_source": "html_user_sim/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/final.pdf",
+        "goals": "goals/ExCP_-_Extreme_LLM_Checkpoint_Compression_via_Weight-Momentum_Joint_Shrinking_ICML_2024/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022",
+      "autoslides": {
+        "deck": "decks/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/round2_final.pdf",
+        "goals": "goals/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper9_RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/final.pptx",
+        "goals": "goals/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/html.pdf",
+        "deck_source": "html_user_sim/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/final.pdf",
+        "goals": "goals/RieszNet_and_ForestRiesz_-_Automatic_Debiased_ICML_2022/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024",
+      "autoslides": {
+        "deck": "decks/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/round2_final.pdf",
+        "goals": "goals/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper47_Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/final.pptx",
+        "goals": "goals/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/html.pdf",
+        "deck_source": "html_user_sim/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/final.pdf",
+        "goals": "goals/Position_-_Rethinking_Post-Hoc_Search-Based_Neural_Approaches_for_Solving_ICML_2024/html.json",
+        "n_goals": 5
+      }
+    },
+    {
+      "paper": "Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025",
+      "autoslides": {
+        "deck": "decks/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/autoslides.pdf",
+        "deck_source": "autoslides_user_sim/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/round5_final.pdf",
+        "goals": "goals/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/autoslides.json",
+        "n_goals": 5
+      },
+      "convdeck": {
+        "deck": "decks/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/convdeck.pptx",
+        "deck_source": "convdeck_user_sim/paper94_Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/final.pptx",
+        "goals": "goals/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/convdeck.json",
+        "n_goals": 5
+      },
+      "html": {
+        "deck": "decks/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/html.pdf",
+        "deck_source": "html_user_sim/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/final.pdf",
+        "goals": "goals/Sundial_-_A_Family_of_Highly_Capable_Time_Series_Foundation_Models_ICML_2025/html.json",
+        "n_goals": 5
+      }
+    }
+  ]
+}

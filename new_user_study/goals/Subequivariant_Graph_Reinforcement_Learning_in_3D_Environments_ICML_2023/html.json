@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck defines the evaluation metrics used for the main results."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should end with open questions rather than a standard conclusion summary."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Slide titles should be phrased as claims rather than section labels."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."
+  }
+]

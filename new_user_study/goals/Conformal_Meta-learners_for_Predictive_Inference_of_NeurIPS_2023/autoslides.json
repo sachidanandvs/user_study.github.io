@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include more than one equation across the whole deck."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should place limitations immediately after the main result."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck contains no more than two tables."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Each slide title is at most 6 words."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should not include citations."
+  }
+]

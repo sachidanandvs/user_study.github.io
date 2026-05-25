@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck defines the evaluation metrics used for the main results."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should end with open questions rather than a standard conclusion summary before the final Thank You slide."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 10 slides."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "Qualitative example slides include text explaining what the viewer should observe."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "No bullet point exceeds 20 words."
+  }
+]

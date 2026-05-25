@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include a standalone related work slide."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should present the main result before the method explanation."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 5 slides."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck should avoid tables entirely."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses first-person language such as \u201cwe show\u201d."
+  }
+]

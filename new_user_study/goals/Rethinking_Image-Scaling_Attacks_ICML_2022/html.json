@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should start with a real-world scenario before introducing the technical problem."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck contains no more than five figures."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses third-person language such as \u201cthey show\u201d."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 5 slides."
+  }
+]

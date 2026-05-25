@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include secondary experiments that do not affect the main conclusion."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should end with open questions rather than a standard conclusion summary."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The method section includes at least one visual element."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses third-person language such as \u201cthey show\u201d."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."
+  }
+]

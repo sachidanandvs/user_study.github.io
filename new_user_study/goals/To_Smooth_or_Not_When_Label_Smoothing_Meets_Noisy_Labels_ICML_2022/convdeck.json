@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should include one slide that states the paper\u2019s most surprising or non-obvious finding."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should start with a real-world scenario before introducing the technical problem."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at least 20 slides."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck contains no more than five figures."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Every slide should have at least one stylized keyword text(bold/colored)."
+  }
+]

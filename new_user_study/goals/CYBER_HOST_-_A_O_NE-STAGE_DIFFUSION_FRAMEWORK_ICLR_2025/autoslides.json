@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include dataset details beyond names and their role in evaluation."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should spend more space on qualitative examples than on quantitative tables."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck should avoid tables entirely."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck uses first-person language such as \u201cwe show\u201d."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should contain at most 20 slides."
+  }
+]

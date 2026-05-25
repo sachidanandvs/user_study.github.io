@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should include one slide focused on the method\u2019s main failure mode or weakness."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should introduce the method visually before explaining it textually."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should cite the sources for all baseline methods mentioned in the deck."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The slide deck contains no more than five figures."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "The slide deck does not use unexplained acronyms."
+  }
+]

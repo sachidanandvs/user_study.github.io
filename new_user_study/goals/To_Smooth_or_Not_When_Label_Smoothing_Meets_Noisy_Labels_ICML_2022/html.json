@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include more than one equation across the whole deck."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The main methodology figure should be accompanied by text that highlights the important components and their roles."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Each slide title is at most 6 words."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should not include citations."
+  }
+]

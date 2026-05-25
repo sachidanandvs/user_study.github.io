@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Content Inclusion/Exclusion Requirements",
+    "requirement": "The slide deck should not include a standalone related work slide."
+  },
+  {
+    "category": "Narrative Structure Requirements",
+    "requirement": "The slide deck should allocate only one slide to results and use it to summarize the main empirical message."
+  },
+  {
+    "category": "Figure and Table Usage Requirements",
+    "requirement": "The method section includes at least one visual element."
+  },
+  {
+    "category": "Style and Wording Requirements",
+    "requirement": "Each slide title is at most 6 words."
+  },
+  {
+    "category": "Deck Composition Requirements",
+    "requirement": "The slide deck should not include citations."
+  }
+]
