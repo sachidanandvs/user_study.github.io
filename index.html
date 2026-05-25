@@ -155,12 +155,12 @@ body {
   background: #fafbfc;
 }
 .goals-area-title {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  color: #64748b;
-  font-weight: 700;
-  margin: 0 0 6px;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #dc2626;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 .goal-row {
   display: flex;
@@ -300,7 +300,7 @@ body {
       <li>For each of the <strong>5</strong> goals, mark <strong>True</strong> if the refined deck satisfies it, <strong>False</strong> if not.</li>
       <li>Goals <em>differ</em>em> across decks even for the same paper &mdash; that's expected.</li>
       <li>When every goal is answered, click <strong>Submit</strong>.</li>
-      <li style="font-size:1.1rem;font-weight:700;color:#dc2626;"><strong>Important:</strong> Evaluate only based on whether the goals are satisfied by the slide deck, not by the content or visual quality</li>
+      <li style="font-size:1.1rem;font-weight:700;color:#dc2626;">Important: Evaluate only based on whether the goals are satisfied by the slide deck, not by the content or visual quality of the slide.</li>
     </ol>
     <h3 style="margin-top:16px;">Goal Categories</h3>
     <p style="margin:4px 0 0;color:#334155;font-size:0.85rem;line-height:1.5;">
@@ -488,7 +488,7 @@ function renderPapers() {
             <iframe src="${deckUrl}" loading="lazy"></iframe>
           </div>
           <div class="goals-area">
-            <p class="goals-area-title">Goals this deck was refined against</p>
+            <p class="goals-area-title">Are these goals satisfied by the refined slide deck?</p>
             ${goalsList.length ? goalsHtml : '<p style="color:#94a3b8;">No goals available.</p>'}
           </div>
         </div>`;
